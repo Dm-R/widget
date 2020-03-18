@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 550px) {
+        width: 500px;
+        margin: auto;
+        background-color: green;
+    }
+}
