@@ -23,7 +23,7 @@ const initialState = {
 };
 
 const fetchUsers = (url) => async (dispatch) => {
-  dispatch(SEND_REQUEST);
+  dispatch(FETCH_USERS);
   try {
     let users = await fetch(url);
     users = await users.json();
@@ -49,5 +49,6 @@ const fetchUsers = (url) => async (dispatch) => {
     dispatch(fetchUsersError(error));
   }
 };
+
 
 const store = createStore(reduser, applyMiddleware(thunkMiddleware));

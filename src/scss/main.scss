@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .container {
     display: flex;
@@ -28,12 +29,16 @@
 }
 .footer {
     background-color: $main-color;
-    border-top: 1px solid black;
     text-align: center;
     button {
+        width: 100%;
         border: none;
         background-color: $main-color;
         font-size: 1.3em;
+        outline: none;
+        &:active {
+            border: 2px inset $main-color;
+        }
         i {
             background-color: $main-color;
             margin-right: .3em;
