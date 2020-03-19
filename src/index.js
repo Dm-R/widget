@@ -4,8 +4,8 @@
 import './scss/main.scss';
 
 import {
-  SEND_REQUEST,
-  addRequestSuccess, addRequestError,
+  FETCH_USERS,
+  fetchUsersSuccess, fetchUsersError,
 } from './actions';
 
 const redux = require('redux');
@@ -14,6 +14,13 @@ const thunkMiddleware = require('redux-thunk').default;
 
 const { applyMiddleware } = redux;
 const { createStore } = redux;
+
+const initialState = {
+  usersState: {
+    areFetching: false,
+    users: [],
+  },
+};
 
 const fetchUsers = (url) => async (dispatch) => {
   dispatch(SEND_REQUEST);
@@ -37,15 +44,10 @@ const fetchUsers = (url) => async (dispatch) => {
       const next10users = await Promise.all([...(each10Url.map((singleUrl) => fetch(singleUrl)))]);
       usersWithFullInfo = [...usersWithFullInfo, next10users];
     }
-    dispatch(addRequestSuccess(usersWithFullInfo));
+    dispatch(fetchUsersSuccess(usersWithFullInfo));
   } catch (error) {
-    dispatch(addRequestError(error));
+    dispatch(fetchUsersError(error));
   }
 };
-const reduser = (state, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+
 const store = createStore(reduser, applyMiddleware(thunkMiddleware));

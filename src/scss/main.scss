@@ -1,9 +1,42 @@
+@import './colors';
+* {
+    margin: 0;
+    padding: 0;
+}
 .container {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    width: 100%;
     @media (min-width: 550px) {
-        width: 500px;
-        margin: auto;
+        width: 600px;
         background-color: green;
+    }
+}
+.header {
+    border-top: 4px solid black;
+    text-align: center;
+    background-color: $main-color;
+    i {
+        margin-top: .1em;
+    }
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        margin-bottom: .2em;
+    }
+}
+.footer {
+    background-color: $main-color;
+    border-top: 1px solid black;
+    text-align: center;
+    button {
+        border: none;
+        background-color: $main-color;
+        font-size: 1.3em;
+        i {
+            background-color: $main-color;
+            margin-right: .3em;
+        }
     }
 }

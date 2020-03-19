@@ -1,16 +1,24 @@
-export const SEND_REQUEST = 'SEND_REQUEST';
-export const REQUEST_SUCCESS = 'REQUEST_SECCESS';
-export const REQUEST_ERROR = 'REQUEST_ERROR';
+/* eslint-disable arrow-body-style */
+export const FETCH_USERS = 'FETCH_USERS';
+export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
+export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR';
+export const DELETE_ESER = 'DELETE_ESER';
 
-export const addRequestSuccess = (response) => {
+export const delUser = (id) => {
   return {
-    type: REQUEST_SUCCESS,
-    response,
+    type: DELETE_ESER,
+    id,
   };
 };
-export const addRequestError = (error) => {
+export const fetchUsersSuccess = (users) => {
   return {
-    type: REQUEST_ERROR,
+    type: FETCH_USERS_SUCCESS,
+    users,
+  };
+};
+export const fetchUsersError = (error) => {
+  return {
+    type: FETCH_USERS_ERROR,
     error,
   };
 };
