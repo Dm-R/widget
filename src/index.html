@@ -13,11 +13,29 @@
             <p>За кем следить на Github</p>
         </div>
         <div class='content'>
-
+            
         </div>
         <div class='footer'>
             <button><i class="fa fa-refresh" aria-hidden="true"></i>REFRESH</button>
         </div>
     </div>
+    <script id='tmp' type="x-tmpl-mustache">
+        <div class="card">
+            <div class='card_info'>
+                <div class='wrapper'>
+                    <img class='avatar' src='{{avatar_url}}' />
+                    <div class='description'>
+                        <h1>{{name}}</h1>
+                        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i><span class='location'> {{location}}</span>
+                        <p class='email' >@{{login}}</p>
+                    </div>
+                </div>
+                <div class='arrow'>
+                    <i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+                </div>
+            </div>
+            <button class='deleteBtn'><i class="fa fa-trash fa-4x" aria-hidden="true"></i></button>
+        </div>
+    </script>
 </body>
 </html>
