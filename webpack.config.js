@@ -52,7 +52,7 @@ module.exports = {
       server._watch('src/index.html');
     },
     contentBase: './dist',
-    port: 1111,
+    port: 1112,
     hot: true,
   },
 };
